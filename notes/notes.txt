@@ -1,0 +1,8 @@
+sudo docker image ls 
+sudo docker ps -a
+sudo docker rm a583f1675aa0
+sudo docker rmi edec1ce29f14
+sudo docker build .
+
+x=$(sudo docker ps -a | tail -n1 ) && cid=$(echo "$x"| sed -r "s/[ \t]+/ /g"|cut -d" " -f1); iid=$(echo "$x"| sed -r "s/[ \t]+/ /g"|cut -d" " -f2); echo "cid=${cid} x iid=${iid}"
+
